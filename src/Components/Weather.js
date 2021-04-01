@@ -44,6 +44,7 @@ export default function Weather() {
             <div>
                 <h2>At least it is in {city}!</h2>
                 {form}
+                <Statistics city={city} stats={weather} />
             </div>
         );
     } else if (loaded) {
@@ -51,6 +52,7 @@ export default function Weather() {
             <div>
                 <h2>At least it is somewhere in the world...!</h2>
                 {form}
+                <Statistics city={city} stats={weather} />
             </div>
         );
     } {
