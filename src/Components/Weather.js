@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Statistics from './Statistics';
 
 export default function Weather() {
     const [loaded, setLoaded] = useState(false);
@@ -38,7 +39,7 @@ export default function Weather() {
         setLoaded(true);
     }
 
-    if (loaded && description === "clear sky") {
+    if (loaded && weather.description === "clear sky") {
         return (
             <div>
                 <h2>At least it is in {city}!</h2>
