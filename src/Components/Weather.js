@@ -27,7 +27,6 @@ export default function Weather() {
     }
 
     function handleResponse(response) {
-    //     alert(`The weather in New York is ${response.data.main.temp}°C`);
         setCity(response.data.name);
         setWeather({ 
             temperature: response.data.main.temp,
@@ -39,19 +38,21 @@ export default function Weather() {
         setLoaded(true);
     }
 
-    // let apiKey = "28dc556bb211b420ef0f1e534d06a1db";
-    // let url = `https://api.openweathermap.org/data/2.5/weather?appid=${apiKey}&units=metric&q=New York`;
-
-    // axios.get(url).then(handleResponse);
-
-    if (loaded) {
+    if (loaded && description === "clear sky") {
         return (
             <div>
                 <h2>At least it is in {city}!</h2>
                 {form}
             </div>
         );
-    } else {
+    } else if (loaded) {
+        return (
+            <div>
+                <h2>At least it is somewhere in the world...!</h2>
+                {form}
+            </div>
+        );
+    } {
         return (
             <div>
                 <h2>At least it is somewhere in the world...</h2>
