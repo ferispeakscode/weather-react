@@ -4,6 +4,13 @@ import axios from 'axios';
 export default function Weather() {
     const [loaded, setLoaded] = useState(false);
 
+    let form = (
+        <form>
+            <input type="search" placeholder="Enter a city..." />
+            <input type="submit" value="Search" />
+        </form>
+    );
+
     function handleResponse(response) {
         // alert(`The weather in New York is ${response.data.main.temp}°C`);
     }
@@ -17,12 +24,14 @@ export default function Weather() {
         return (
             <div>
                 <h2>At least it is in CITY</h2>
+                {form}
             </div>
         );
     } else {
         return (
             <div>
                 <h2>At least it is somewhere in the world...</h2>
+                {form}
             </div>
         );
     }
