@@ -56,7 +56,7 @@ export default function Weather() {
                 <Statistics city={city} stats={weather} />
             </div>
         );
-    } {
+    } else {
         return (
             <div>
                 <h2>At least it is somewhere in the world...</h2>
