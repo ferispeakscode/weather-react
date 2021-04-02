@@ -31,6 +31,7 @@ export default function Weather() {
         setCity(response.data.name);
         setWeather({ 
             temperature: response.data.main.temp,
+            feel: response.data.main.feels_like,
             description: response.data.weather[0].description,
             humidity: response.data.main.humidity,
             wind: response.data.wind.speed,
