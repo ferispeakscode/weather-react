@@ -42,7 +42,7 @@ export default function Weather() {
 
     if (loaded && weather.description === "clear sky") {
         return (
-            <div>
+            <div className="container">
                 <h2>At least it is in {city}!</h2>
                 {form}
                 <Statistics city={city} stats={weather} />
@@ -50,7 +50,7 @@ export default function Weather() {
         );
     } else if (loaded) {
         return (
-            <div>
+            <div className="container">
                 <h2>At least it is somewhere in the world...!</h2>
                 {form}
                 <Statistics city={city} stats={weather} />
