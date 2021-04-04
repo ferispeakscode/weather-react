@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import Weather from './Components/Weather';
 
@@ -8,7 +8,7 @@ function App() {
       <header className="App-header">
         <h1>Fine day, isn't it?</h1>
         <Weather />
-        <img src={logo} className="App-logo" alt="logo" />
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
       </header>
     </div>
   );

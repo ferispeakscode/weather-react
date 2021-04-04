@@ -7,6 +7,7 @@ export default function Weather() {
     const [loaded, setLoaded] = useState(false);
     const [city, setCity] = useState();
     const [weather, setWeather] = useState({});
+    const [unit, setUnit] = useState("metric");
 
     let form = (
         <form onSubmit={handleSubmit}>
@@ -23,7 +24,7 @@ export default function Weather() {
         event.preventDefault();
 
         let apiKey = "81f516c244f3dd725e577ba1e814dedc";
-        let url = `https://api.openweathermap.org/data/2.5/weather?appid=${apiKey}&units=metric&q=${city}`;
+        let url = `https://api.openweathermap.org/data/2.5/weather?appid=${apiKey}&units={unit}&q=${city}`;
 
         axios.get(url).then(handleResponse);
     }
