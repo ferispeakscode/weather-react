@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Statistics from './Statistics';
+import UnitToggleBtn from './UnitToggleBtn';
 
 export default function Weather() {
     const [loaded, setLoaded] = useState(false);
@@ -46,6 +47,7 @@ export default function Weather() {
                 <h2>At least it is in {city}!</h2>
                 {form}
                 <Statistics city={city} stats={weather} />
+                <UnitToggleBtn unit={unit} />
             </div>
         );
     } else if (loaded) {
@@ -54,6 +56,7 @@ export default function Weather() {
                 <h2>At least it is somewhere in the world...!</h2>
                 {form}
                 <Statistics city={city} stats={weather} />
+                <UnitToggleBtn unit={unit} />
             </div>
         );
     } else {
