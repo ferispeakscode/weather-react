@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Statistics from './Statistics';
 import UnitToggleBtn from './UnitToggleBtn';
+import LastUpdated from './LastUpdated';
 
 export default function Weather() {
     const [loaded, setLoaded] = useState(false);
     const [city, setCity] = useState();
     const [weather, setWeather] = useState({});
     const [unit, setUnit] = useState("metric");
+    const [date, setDate] = useState();
 
     let form = (
         <form onSubmit={handleSubmit}>
@@ -39,6 +41,7 @@ export default function Weather() {
             wind: response.data.wind.speed,
             icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
         });
+        setDate(response.data.dt);
         setLoaded(true);
     }
 
@@ -49,6 +52,7 @@ export default function Weather() {
                 {form}
                 <Statistics city={city} stats={weather} />
                 <UnitToggleBtn unit={unit} />
+                <LastUpdated date={date} />
             </div>
         );
     } else if (loaded) {
@@ -58,6 +62,7 @@ export default function Weather() {
                 {form}
                 <Statistics city={city} stats={weather} />
                 <UnitToggleBtn unit={unit} />
+                <LastUpdated date={date} />
             </div>
         );
     } else {
