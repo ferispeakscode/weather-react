@@ -3,6 +3,7 @@ import axios from 'axios';
 import Statistics from './Statistics';
 import UnitToggleBtn from './UnitToggleBtn';
 import LastUpdated from './LastUpdated';
+import Forecast from './Forecast';
 
 export default function Weather() {
     const [loaded, setLoaded] = useState(false);
@@ -61,6 +62,7 @@ export default function Weather() {
                 <Statistics city={city} stats={weather} />
                 <UnitToggleBtn unit={unit} />
                 <LastUpdated date={date} />
+                <Forecast forecast={forecast} />
             </div>
         );
     } else if (loaded) {
@@ -71,6 +73,7 @@ export default function Weather() {
                 <Statistics city={city} stats={weather} />
                 <UnitToggleBtn unit={unit} />
                 <LastUpdated date={date} />
+                <Forecast forecast={forecast} />
             </div>
         );
     } else {
