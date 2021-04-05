@@ -2,18 +2,47 @@ import React from 'react';
 import ForecastItem from './ForecastItem';
 
 export default function Forecast(props) {
-    console.log(props.forecast);
     if (props.forecast) {
-        console.log(props.forecast[0].dt);
+        console.log(props.forecast[0]);
         return (
             <div className="container">
                 <div className="row">
-                        <ForecastItem time={props.forecast[0].dt} icon={0} max={0} min={0} />
-                        <ForecastItem time={props.forecast[0].dt} icon={0} max={0} min={0} />
-                        <ForecastItem time={props.forecast[0].dt} icon={0} max={0} min={0} />
-                        <ForecastItem time={props.forecast[0].dt} icon={0} max={0} min={0} />
-                        <ForecastItem time={props.forecast[0].dt} icon={0} max={0} min={0} />
-                        <ForecastItem time={props.forecast[0].dt} icon={0} max={0} min={0} />
+                    <ForecastItem
+                        time={props.forecast[0].dt}
+                        icon={props.forecast[0].weather[0].icon}
+                        max={props.forecast[0].main.temp_max}
+                        min={props.forecast[0].main.temp_min} 
+                    />
+                    <ForecastItem
+                        time={props.forecast[1].dt}
+                        icon={props.forecast[1].weather[1].icon}
+                        max={props.forecast[1].main.temp_max}
+                        min={props.forecast[1].main.temp_min} 
+                    />
+                    <ForecastItem
+                        time={props.forecast[2].dt}
+                        icon={props.forecast[2].weather[2].icon}
+                        max={props.forecast[2].main.temp_max}
+                        min={props.forecast[2].main.temp_min} 
+                    />
+                    <ForecastItem
+                        time={props.forecast[3].dt}
+                        icon={props.forecast[3].weather[3].icon}
+                        max={props.forecast[3].main.temp_max}
+                        min={props.forecast[3].main.temp_min} 
+                    />
+                    <ForecastItem
+                        time={props.forecast[4].dt}
+                        icon={props.forecast[4].weather[4].icon}
+                        max={props.forecast[4].main.temp_max}
+                        min={props.forecast[4].main.temp_min} 
+                    />
+                    <ForecastItem
+                        time={props.forecast[5].dt}
+                        icon={props.forecast[5].weather[5].icon}
+                        max={props.forecast[5].main.temp_max}
+                        min={props.forecast[5].main.temp_min} 
+                    />
                 </div>
             </div>
         );
