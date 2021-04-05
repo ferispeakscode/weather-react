@@ -28,8 +28,8 @@ export default function Weather() {
         event.preventDefault();
 
         let apiKey = "81f516c244f3dd725e577ba1e814dedc";
-        let url = `https://api.openweathermap.org/data/2.5/weather?appid=${apiKey}&units={unit}&q=${city}`;
-        let forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?appid=${apiKey}&units={unit}&q=${city}`;
+        let url = `https://api.openweathermap.org/data/2.5/weather?appid=${apiKey}&units=${unit}&q=${city}`;
+        let forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?appid=${apiKey}&units=${unit}&q=${city}`;
 
         axios.get(url).then(handleResponse);
         axios.get(forecastUrl).then(handleForecast);
