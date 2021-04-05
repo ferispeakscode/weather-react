@@ -6,7 +6,7 @@ export default function ForecastItem(props) {
     return(
         <div className="col">
             <h6>{props.time}</h6>
-            <img src={image} alt={props.description} />
+            <img src={image} alt={props.desc} />
             <h6><strong>{props.max}°</strong></h6>
             <h6>{props.min}°</h6>
         </div>
