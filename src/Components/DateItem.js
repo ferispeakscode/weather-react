@@ -26,6 +26,6 @@ export default function DateItem(props) {
     }
 
     return (
-        <h4>{day}, {hour}:{minutes} {meridiem}</h4>
+        <h6>{day}, {hour}:{minutes} {meridiem}</h6>
     );
 }
