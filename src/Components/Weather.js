@@ -70,7 +70,7 @@ export default function Weather() {
                 <Statistics city={city} stats={weather} />
                 <button type="button" onClick={toggleUnit}>Switch to Fahrenheit</button>
                 <button type="button" onClick={toggleUnit}>Switch to Celsius</button>
-                <LastUpdated date={date} />
+                <LastUpdated timestamp={date} />
                 <Forecast forecast={forecast} />
             </div>
         );
@@ -82,7 +82,7 @@ export default function Weather() {
                 <Statistics city={city} stats={weather} />
                 <button type="button" onClick={toggleUnit}>Switch to Fahrenheit</button>
                 <button type="button" onClick={toggleUnit}>Switch to Celsius</button>
-                <LastUpdated date={date} />
+                <LastUpdated timestamp={date} />
                 <Forecast forecast={forecast} />
             </div>
         );
