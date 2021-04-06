@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import Statistics from './Statistics';
-import UnitToggleBtn from './UnitToggleBtn';
+// import UnitToggleBtn from './UnitToggleBtn';
 import LastUpdated from './LastUpdated';
 import Forecast from './Forecast';
 
@@ -54,13 +54,22 @@ export default function Weather() {
         setForecast(response.data.list);
     }
 
+    function toggleUnit() {
+        if (unit === "metric") {
+            setUnit("imperial");
+        } else {
+            setUnit("metric");
+        }
+    }
+
     if (loaded && weather.description === "clear sky") {
         return (
             <div className="container">
                 <h2>At least it is in {city}!</h2>
                 {form}
                 <Statistics city={city} stats={weather} />
-                <UnitToggleBtn unit={unit} />
+                <button type="button" onClick={toggleUnit}>Switch to Fahrenheit</button>
+                <button type="button" onClick={toggleUnit}>Switch to Celsius</button>
                 <LastUpdated date={date} />
                 <Forecast forecast={forecast} />
             </div>
@@ -71,7 +80,8 @@ export default function Weather() {
                 <h2>At least it is somewhere in the world...!</h2>
                 {form}
                 <Statistics city={city} stats={weather} />
-                <UnitToggleBtn unit={unit} />
+                <button type="button" onClick={toggleUnit}>Switch to Fahrenheit</button>
+                <button type="button" onClick={toggleUnit}>Switch to Celsius</button>
                 <LastUpdated date={date} />
                 <Forecast forecast={forecast} />
             </div>
