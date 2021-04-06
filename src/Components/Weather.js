@@ -5,6 +5,8 @@ import Statistics from './Statistics';
 import LastUpdated from './LastUpdated';
 import Forecast from './Forecast';
 
+import './Weather.css';
+
 export default function Weather() {
     const [loaded, setLoaded] = useState(false);
     const [city, setCity] = useState();

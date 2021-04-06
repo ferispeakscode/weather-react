@@ -1,0 +1,113 @@
+.container {
+    position: relative;
+    margin: 10px auto;
+    color: #082c66;
+    padding: 12px;
+  
+    background: rgba(216, 233, 255, 0.33);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.6);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+  
+  .current-container {
+    background: rgba(216, 233, 255, 0.25);
+    box-shadow: 0 4px 12px 0 rgba(31, 38, 135, 0.27);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  
+    padding: 10px;
+  }
+  
+  .forecast-container {
+    background-image: linear-gradient(
+        rgba(158, 200, 255, 0.515),
+        rgba(158, 200, 255, 0.515)
+      ),
+      url(../Images/clouds.jpg);
+    background-position: center;
+  
+    background-color: rgba(198, 223, 255, 0.89);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+  
+  .row {
+    padding: 5px 0px;
+  }
+  
+  .form-group {
+    display: inline-block;
+    width: 60%;
+  }
+  
+  .btn {
+    margin-bottom: 1rem;
+    margin-left: 0.25rem;
+  }
+  
+  .btn-search {
+    background-color: rgba(86, 159, 255, 0.55) !important;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+  
+  .btn-current {
+    background-color: rgba(10, 90, 211, 0.55) !important;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+  
+  .btn-unit {
+    background-color: rgba(223, 227, 240, 0.925) !important;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+  
+  h1 {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    text-align: center;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  h4 {
+    font-size: 1rem !important;
+    color: rgb(59, 62, 66);
+    text-align: center;
+  }
+  
+  .current-weather-icon {
+    width: 5rem;
+  }
+  
+  .todays-temp {
+    display: inline;
+  }
+  
+  .unit {
+    padding-left: 3px;
+  }
+  
+  #description {
+    text-transform: capitalize;
+  }
+  
