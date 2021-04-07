@@ -59,7 +59,7 @@ export default function Weather() {
     function toggleUnit() {
         if (unit === "metric") {
             setUnit("imperial");
-            
+
             let key = "81f516c244f3dd725e577ba1e814dedc";
             let url = `https://api.openweathermap.org/data/2.5/weather?appid=${key}&units=${unit}&q=${city}`;
             let forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?appid=${key}&units=${unit}&q=${city}`;
@@ -68,7 +68,7 @@ export default function Weather() {
             axios.get(forecastUrl).then(handleForecast);
         } else {
             setUnit("metric");
-            
+
             let key = "81f516c244f3dd725e577ba1e814dedc";
             let url = `https://api.openweathermap.org/data/2.5/weather?appid=${key}&units=${unit}&q=${city}`;
             let forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?appid=${key}&units=${unit}&q=${city}`;
@@ -80,25 +80,29 @@ export default function Weather() {
 
     if (loaded && weather.description === "clear sky") {
         return (
-            <div className="container">
-                <h2>At least it is in {city}!</h2>
-                {form}
-                <Statistics city={city} stats={weather} />
-                <button type="button" class="btn btn-unit" onClick={toggleUnit}>Switch to Fahrenheit</button>
-                <button type="button" class="btn btn-unit" onClick={toggleUnit}>Switch to Celsius</button>
-                <LastUpdated timestamp={date} />
+            <div>
+                <div className="container">
+                    <h2>At least it is in {city}!</h2>
+                    {form}
+                    <Statistics city={city} stats={weather} />
+                    <button type="button" class="btn btn-unit" onClick={toggleUnit}>Switch to Fahrenheit</button>
+                    <button type="button" class="btn btn-unit" onClick={toggleUnit}>Switch to Celsius</button>
+                    <LastUpdated timestamp={date} />
+                </div>
                 <Forecast forecast={forecast} />
             </div>
         );
     } else if (loaded) {
         return (
-            <div className="container">
-                <h2>At least it is somewhere in the world...!</h2>
-                {form}
-                <Statistics city={city} stats={weather} />
-                <button type="button" class="btn btn-unit" onClick={toggleUnit}>Switch to Fahrenheit</button>
-                <button type="button" class="btn btn-unit" onClick={toggleUnit}>Switch to Celsius</button>
-                <LastUpdated timestamp={date} />
+            <div>
+                <div className="container">
+                    <h2>At least it is somewhere in the world...!</h2>
+                    {form}
+                    <Statistics city={city} stats={weather} />
+                    <button type="button" class="btn btn-unit" onClick={toggleUnit}>Switch to Fahrenheit</button>
+                    <button type="button" class="btn btn-unit" onClick={toggleUnit}>Switch to Celsius</button>
+                    <LastUpdated timestamp={date} />
+                </div>
                 <Forecast forecast={forecast} />
             </div>
         );
