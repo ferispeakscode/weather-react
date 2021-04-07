@@ -16,7 +16,7 @@ export default function Weather() {
     const [forecast, setForecast] = useState();
 
     let form = (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} class="form-group">
             <input type="search" placeholder="Enter a city..." onChange={updateCity} />
             <input type="submit" class="btn btn-search" value="Search" />
         </form>
