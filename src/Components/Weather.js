@@ -39,7 +39,7 @@ export default function Weather() {
 
     function handleResponse(response) {
         setCity(response.data.name);
-        setWeather({ 
+        setWeather({
             temperature: response.data.main.temp,
             feel: response.data.main.feels_like,
             description: response.data.weather[0].description,
@@ -59,8 +59,22 @@ export default function Weather() {
     function toggleUnit() {
         if (unit === "metric") {
             setUnit("imperial");
+            
+            let key = "81f516c244f3dd725e577ba1e814dedc";
+            let url = `https://api.openweathermap.org/data/2.5/weather?appid=${key}&units=${unit}&q=${city}`;
+            let forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?appid=${key}&units=${unit}&q=${city}`;
+
+            axios.get(url).then(handleResponse);
+            axios.get(forecastUrl).then(handleForecast);
         } else {
             setUnit("metric");
+            
+            let key = "81f516c244f3dd725e577ba1e814dedc";
+            let url = `https://api.openweathermap.org/data/2.5/weather?appid=${key}&units=${unit}&q=${city}`;
+            let forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?appid=${key}&units=${unit}&q=${city}`;
+
+            axios.get(url).then(handleResponse);
+            axios.get(forecastUrl).then(handleForecast);
         }
     }
 
