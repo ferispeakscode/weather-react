@@ -9,7 +9,7 @@ export default function Statistics(props) {
                     <h3>{props.city}</h3>
                     <h3><img src={props.stats.icon} alt="weather icon" />
                     {props.stats.temperature}° C</h3>
-                    <h4>{props.stats.description}</h4>
+                    <h4 id="description">{props.stats.description}</h4>
                 </div>
                 <div className="col-12 col-md-4 mt-4">
                     <h4>Feels like: {props.stats.feel}° C</h4>
