@@ -70,8 +70,8 @@ export default function Weather() {
                 <h2>At least it is in {city}!</h2>
                 {form}
                 <Statistics city={city} stats={weather} />
-                <button type="button" onClick={toggleUnit}>Switch to Fahrenheit</button>
-                <button type="button" onClick={toggleUnit}>Switch to Celsius</button>
+                <button type="button" class="btn btn-unit" onClick={toggleUnit}>Switch to Fahrenheit</button>
+                <button type="button" class="btn btn-unit" onClick={toggleUnit}>Switch to Celsius</button>
                 <LastUpdated timestamp={date} />
                 <Forecast forecast={forecast} />
             </div>
@@ -82,8 +82,8 @@ export default function Weather() {
                 <h2>At least it is somewhere in the world...!</h2>
                 {form}
                 <Statistics city={city} stats={weather} />
-                <button type="button" onClick={toggleUnit}>Switch to Fahrenheit</button>
-                <button type="button" onClick={toggleUnit}>Switch to Celsius</button>
+                <button type="button" class="btn btn-unit" onClick={toggleUnit}>Switch to Fahrenheit</button>
+                <button type="button" class="btn btn-unit" onClick={toggleUnit}>Switch to Celsius</button>
                 <LastUpdated timestamp={date} />
                 <Forecast forecast={forecast} />
             </div>
