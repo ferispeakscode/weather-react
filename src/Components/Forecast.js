@@ -5,7 +5,7 @@ export default function Forecast(props) {
     if (props.forecast) {
         console.log(props.forecast[0]);
         return (
-            <div className="container">
+            <div className="container forecast-container">
                 <div className="row">
                     <ForecastItem
                         time={props.forecast[0].dt}
