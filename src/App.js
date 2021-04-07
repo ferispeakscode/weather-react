@@ -9,6 +9,7 @@ function App() {
         <Weather />
         {/* <img src={logo} className="App-logo" alt="logo" /> */}
       </header>
+      <h6>Coded by <a href="https://github.com/ferispeakscode/weather-react">Felicia Tchen</a> © 2021</h6>
     </div>
   );
 }
