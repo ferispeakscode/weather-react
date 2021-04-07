@@ -96,6 +96,7 @@ export default function Weather() {
         return (
             <div>
                 <div className="container">
+                    <h1>Fine day, isn't it?</h1>
                     <h2>At least it is somewhere in the world...!</h2>
                     {form}
                     <Statistics city={city} stats={weather} />
@@ -109,6 +110,7 @@ export default function Weather() {
     } else {
         return (
             <div>
+                <h1>Fine day, isn't it?</h1>
                 <h2>At least it is somewhere in the world...</h2>
                 {form}
             </div>
