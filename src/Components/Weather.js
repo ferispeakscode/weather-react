@@ -12,6 +12,7 @@ export default function Weather() {
     const [city, setCity] = useState();
     const [weather, setWeather] = useState({});
     const [unit, setUnit] = useState("metric");
+    const [tempScale, setTempScale] = useState("Celsius");
     const [date, setDate] = useState();
     const [forecast, setForecast] = useState();
 
@@ -61,8 +62,10 @@ export default function Weather() {
 
         if (unit === "metric") {
             setUnit("imperial");
+            setTempScale("Fahrenheit");
         } else {
             setUnit("metric");
+            setTempScale("Celsius");
         }
 
         let url = `https://api.openweathermap.org/data/2.5/weather?appid=${key}&units=${unit}&q=${city}`;
@@ -79,8 +82,7 @@ export default function Weather() {
                     <h2>At least it is in {city}!</h2>
                     {form}
                     <Statistics city={city} stats={weather} />
-                    <button type="button" class="btn btn-unit" onClick={toggleUnit}>Switch to Fahrenheit</button>
-                    <button type="button" class="btn btn-unit" onClick={toggleUnit}>Switch to Celsius</button>
+                    <button type="button" class="btn btn-unit" onClick={toggleUnit}>Switch to {tempScale}</button>
                     <LastUpdated timestamp={date} />
                 </div>
                 <Forecast forecast={forecast} />
@@ -94,8 +96,7 @@ export default function Weather() {
                     <h2>At least it is somewhere in the world...!</h2>
                     {form}
                     <Statistics city={city} stats={weather} />
-                    <button type="button" class="btn btn-unit" onClick={toggleUnit}>Switch to Fahrenheit</button>
-                    <button type="button" class="btn btn-unit" onClick={toggleUnit}>Switch to Celsius</button>
+                    <button type="button" class="btn btn-unit" onClick={toggleUnit}>Switch to {tempScale}</button>
                     <LastUpdated timestamp={date} />
                 </div>
                 <Forecast forecast={forecast} />
