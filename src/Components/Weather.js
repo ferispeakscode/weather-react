@@ -57,25 +57,19 @@ export default function Weather() {
     }
 
     function toggleUnit() {
+        let key = "81f516c244f3dd725e577ba1e814dedc";
+
         if (unit === "metric") {
             setUnit("imperial");
-
-            let key = "81f516c244f3dd725e577ba1e814dedc";
-            let url = `https://api.openweathermap.org/data/2.5/weather?appid=${key}&units=${unit}&q=${city}`;
-            let forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?appid=${key}&units=${unit}&q=${city}`;
-
-            axios.get(url).then(handleResponse);
-            axios.get(forecastUrl).then(handleForecast);
         } else {
             setUnit("metric");
-
-            let key = "81f516c244f3dd725e577ba1e814dedc";
-            let url = `https://api.openweathermap.org/data/2.5/weather?appid=${key}&units=${unit}&q=${city}`;
-            let forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?appid=${key}&units=${unit}&q=${city}`;
-
-            axios.get(url).then(handleResponse);
-            axios.get(forecastUrl).then(handleForecast);
         }
+
+        let url = `https://api.openweathermap.org/data/2.5/weather?appid=${key}&units=${unit}&q=${city}`;
+        let forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?appid=${key}&units=${unit}&q=${city}`;
+
+        axios.get(url).then(handleResponse);
+        axios.get(forecastUrl).then(handleForecast);
     }
 
     if (loaded && weather.description === "clear sky") {
