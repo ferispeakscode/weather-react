@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import Statistics from './Statistics';
-// import UnitToggleBtn from './UnitToggleBtn';
-import LastUpdated from './LastUpdated';
-import Forecast from './Forecast';
+import Display from './Display';
+// import Statistics from './Statistics';
+// import LastUpdated from './LastUpdated';
+// import Forecast from './Forecast';
 
 import './Weather.css';
 
@@ -75,40 +75,44 @@ export default function Weather() {
         axios.get(forecastUrl).then(handleForecast);
     }
 
-    if (loaded && weather.description === "clear sky") {
-        return (
-            <div>
-                <div className="container">
-                    <h2>At least it is in {city}!</h2>
-                    {form}
-                    <Statistics city={city} stats={weather} />
-                    <button type="button" class="btn btn-unit" onClick={toggleUnit}>Switch to {tempScale}</button>
-                    <LastUpdated timestamp={date} />
-                </div>
-                <Forecast forecast={forecast} />
-            </div>
-        );
-    } else if (loaded) {
-        return (
-            <div>
-                <div className="container">
-                    <h1>Fine day, isn't it?</h1>
-                    <h2>At least it is somewhere in the world...!</h2>
-                    {form}
-                    <Statistics city={city} stats={weather} />
-                    <button type="button" class="btn btn-unit" onClick={toggleUnit}>Switch to {tempScale}</button>
-                    <LastUpdated timestamp={date} />
-                </div>
-                <Forecast forecast={forecast} />
-            </div>
-        );
-    } else {
-        return (
-            <div>
-                <h1>Fine day, isn't it?</h1>
-                <h2>At least it is somewhere in the world...</h2>
-                {form}
-            </div>
-        );
-    }
+    return(
+        <Display loaded={loaded} form={form} city={city} weather={weather} unit={unit} toggleUnit={toggleUnit} tempScale={tempScale} date={date} forecast={forecast} />
+    );
+
+    // if (loaded && weather.description === "clear sky") {
+    //     return (
+    //         <>
+    //             <div className="container">
+    //                 <h2>At least it is in {city}!</h2>
+    //                 {form}
+    //                 <Statistics city={city} stats={weather} />
+    //                 <button type="button" class="btn btn-unit" onClick={toggleUnit}>Switch to {tempScale}</button>
+    //                 <LastUpdated timestamp={date} />
+    //             </div>
+    //             <Forecast forecast={forecast} />
+    //         </>
+    //     );
+    // } else if (loaded) {
+    //     return (
+    //         <div>  
+    //             <div className="container">
+    //                 <h1>Fine day, isn't it?</h1>
+    //                 <h2>At least it is somewhere in the world...!</h2>
+    //                 {form}
+    //                 <Statistics city={city} stats={weather} />
+    //                 <button type="button" class="btn btn-unit" onClick={toggleUnit}>Switch to {tempScale}</button>
+    //                 <LastUpdated timestamp={date} />
+    //             </div>
+    //             <Forecast forecast={forecast} />
+    //         </div>
+    //     );
+    // } else {
+    //     return (
+    //         <div>
+    //             <h1>Fine day, isn't it?</h1>
+    //             <h2>At least it is somewhere in the world...</h2>
+    //             {form}
+    //         </div>
+    //     );
+    // }
 }
