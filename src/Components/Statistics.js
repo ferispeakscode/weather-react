@@ -14,7 +14,7 @@ export default function Statistics(props) {
                 <div className="col-12 col-md-4 mt-4">
                     <h4>Feels like: {props.stats.feel}° {props.tempUnit}</h4>
                     <h4>Humidity: {props.stats.humidity}%</h4>
-                    <h4>Wind: {props.stats.wind} m/s</h4>
+                    <h4>Wind: {props.stats.wind} {props.windUnit}</h4>
                 </div>
             </div>
         </div>

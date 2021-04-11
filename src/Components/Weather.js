@@ -91,6 +91,7 @@ export default function Weather() {
             toggleUnit={toggleUnit} 
             tempScale={tempScale} 
             tempUnit={tempUnit}
+            windUnit={windUnit}
             date={date} 
             forecast={forecast} />
     );
