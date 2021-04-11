@@ -23,7 +23,7 @@ export default function Display(props) {
                 <SubHeading props={props} />
                 {props.form}
                 {props.loaded && (<>
-                <Statistics city={props.city} stats={props.weather} />
+                <Statistics city={props.city} stats={props.weather} tempUnit={props.tempUnit}/>
                 <button type="button" class="btn btn-unit" onClick={props.toggleUnit}>Switch to {props.tempScale}</button>
                 <LastUpdated timestamp={props.date} /></>)}
             </div>
