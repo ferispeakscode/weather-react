@@ -14,6 +14,7 @@ export default function Weather() {
     const [unit, setUnit] = useState("metric");
     const [tempScale, setTempScale] = useState("Fahrenheit");
     const [tempUnit, setTempUnit] = useState("C");
+    const [windUnit, setWindUnit] = useState("m/s");
     const [date, setDate] = useState();
     const [forecast, setForecast] = useState();
 
@@ -64,10 +65,12 @@ export default function Weather() {
         if (unit === "metric") {
             setUnit("imperial");
             setTempUnit("F");
+            setWindUnit("mph");
             setTempScale("Celsius");
         } else {
             setUnit("metric");
             setTempUnit("C");
+            setWindUnit("m/s");
             setTempScale("Fahrenheit");
         }
 
