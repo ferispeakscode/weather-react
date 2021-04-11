@@ -12,7 +12,7 @@ export default function Weather() {
     const [city, setCity] = useState();
     const [weather, setWeather] = useState({});
     const [unit, setUnit] = useState("metric");
-    const [tempScale, setTempScale] = useState("Celsius");
+    const [tempScale, setTempScale] = useState("Fahrenheit");
     const [date, setDate] = useState();
     const [forecast, setForecast] = useState();
 
@@ -62,10 +62,10 @@ export default function Weather() {
 
         if (unit === "metric") {
             setUnit("imperial");
-            setTempScale("Fahrenheit");
+            setTempScale("Celsius");
         } else {
             setUnit("metric");
-            setTempScale("Celsius");
+            setTempScale("Fahrenheit");
         }
 
         let url = `https://api.openweathermap.org/data/2.5/weather?appid=${key}&units=${unit}&q=${city}`;
