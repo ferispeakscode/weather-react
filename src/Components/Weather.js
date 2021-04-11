@@ -13,6 +13,7 @@ export default function Weather() {
     const [weather, setWeather] = useState({});
     const [unit, setUnit] = useState("metric");
     const [tempScale, setTempScale] = useState("Fahrenheit");
+    const [tempUnit, setTempUnit] = useState("C");
     const [date, setDate] = useState();
     const [forecast, setForecast] = useState();
 
@@ -62,9 +63,11 @@ export default function Weather() {
 
         if (unit === "metric") {
             setUnit("imperial");
+            setTempUnit("F");
             setTempScale("Celsius");
         } else {
             setUnit("metric");
+            setTempUnit("C");
             setTempScale("Fahrenheit");
         }
 
@@ -76,7 +79,17 @@ export default function Weather() {
     }
 
     return(
-        <Display loaded={loaded} form={form} city={city} weather={weather} unit={unit} toggleUnit={toggleUnit} tempScale={tempScale} date={date} forecast={forecast} />
+        <Display 
+            loaded={loaded} 
+            form={form} 
+            city={city} 
+            weather={weather} 
+            unit={unit} 
+            toggleUnit={toggleUnit} 
+            tempScale={tempScale} 
+            tempUnit={tempUnit}
+            date={date} 
+            forecast={forecast} />
     );
 
     // if (loaded && weather.description === "clear sky") {
