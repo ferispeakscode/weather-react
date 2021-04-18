@@ -5,6 +5,7 @@ import Display from './Display';
 // import LastUpdated from './LastUpdated';
 // import Forecast from './Forecast';
 
+import 'bootstrap/dist/css/bootstrap.css';
 import './Weather.css';
 
 export default function Weather() {
