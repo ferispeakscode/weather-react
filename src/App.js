@@ -1,4 +1,3 @@
-// import logo from './logo.svg';
 import './App.css';
 import Weather from './Components/Weather';
 
@@ -7,7 +6,6 @@ function App() {
     <div className="App">
       <header className="App-header">
         <Weather />
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
       </header>
       <h6>Coded by <a href="https://github.com/ferispeakscode/weather-react">Felicia Tchen</a> © 2021</h6>
     </div>
