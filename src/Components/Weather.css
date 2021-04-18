@@ -111,3 +111,6 @@
     text-transform: capitalize;
   }
   
+  #extraStats h4 {
+    line-height: 40px;
+  }
